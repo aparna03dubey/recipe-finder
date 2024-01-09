@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rcipe-finder/static/css/main.9ab572d6.css",
+    "main.js": "/rcipe-finder/static/js/main.e272e511.js",
+    "index.html": "/rcipe-finder/index.html",
+    "main.9ab572d6.css.map": "/rcipe-finder/static/css/main.9ab572d6.css.map",
+    "main.e272e511.js.map": "/rcipe-finder/static/js/main.e272e511.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ab572d6.css",
+    "static/js/main.e272e511.js"
+  ]
+}
