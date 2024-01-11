@@ -19,8 +19,10 @@ async function getMeals(){
 }
 
 useEffect(()=>{
-  getMeals();
+   getMeals();
+   // eslint-disable-next-line react-hooks/exhaustive-deps
 },[]);
+
 
 function handleSubmit(e){
   e.preventDefault();
@@ -28,10 +30,10 @@ function handleSubmit(e){
 }
 
   return <div className="py-20 px-4 lg:px-0 max-w-4xl mx-auto">
-  <h1 className="text-center font-bold bg-neutral-200 py-3 text-neutral-700 text-4xl rounded-md
+  <h1 className="text-center font-bold bg-neutral-200 py-3 border-2 border-gray-800 text-neutral-700 text-4xl rounded-md
    ">Recipe Finder</h1>
   <form className="my-12" onSubmit={handleSubmit}>
-    <input type="text" name="search" id="search" placeholder="Search for the recipe" required className="w-full px-1 py-2 pl-3 rounded-md border-2 border-neutral-00 bg-neutral-200 focus:ring-4 focus:ring-neutral-500 outline-none
+    <input type="text" name="search" id="search" placeholder="Search for the recipe" required className="w-full px-1 py-2 pl-3 rounded-3xl border-2 border-gray-800 bg-neutral-200 focus:ring-2 focus:ring-neutral-500 outline-none
      " 
      value={meal}
      onChange={e=> setMeal(e.target.value)}
@@ -76,9 +78,10 @@ function handleSubmit(e){
   </p>
   
   <ul className=" mb-8 p-4 flex gap-4 items-center justify-center flex-wrap">
-    {meal.strYoutube && <li className="bg-neutral-200 px-4 py-2 hover:cursor-pointer hover:text-neutral-800  font-normal text-base  rounded-lg hover:bg-neutral-300 transition-all duration-250" > <a href={meal.strYoutube} target='_blank'>Video</a> </li>
+    {meal.strYoutube && <li className="bg-neutral-200 px-4 py-2 hover:cursor-pointer hover:text-neutral-800  font-normal text-base  rounded-lg hover:bg-neutral-300 transition-all duration-250" > <a href={meal.strYoutube}  rel="noreferrer"  target='_blank'>Video</a> </li>
 }
-    {meal.strSource && <li className="bg-neutral-200  px-4 py-2 hover:cursor-pointer hover:text-neutral-800 font-normal text-base  rounded-lg hover:bg-neutral-300 transition-all duration-250" ><a href={meal.strSource} target='_blank'>Source</a></li>
+    {meal.strSource && <li className="bg-neutral-200  px-4 py-2 hover:cursor-pointer hover:text-neutral-800 font-normal text-base  rounded-lg hover:bg-neutral-300 transition-all duration-250" ><a href={meal.strSource}
+    rel="noreferrer"  target='_blank'>Source</a></li>
 }
   </ul>
   
@@ -88,3 +91,21 @@ function handleSubmit(e){
   </div>
 
 }
+
+// useEffect(() => {
+//   const fetchBusinesses = () => {
+//      return fetch("theURL", {method: "GET"}
+//   )
+//     .then(res => normalizeResponseErrors(res))
+//     .then(res => {
+//       return res.json();
+//     })
+//     .then(rcvdBusinesses => {
+//       // some stuff
+//     })
+//     .catch(err => {
+//       // some error handling
+//     });
+// };
+// fetchBusinesses();
+// }, []);
